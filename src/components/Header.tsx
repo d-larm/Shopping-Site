@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom'
 import Socials, {SocialLinkProps} from './Socials'
 
 import './Header.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faShoppingBasket } from '@fortawesome/free-solid-svg-icons'
 
 export type HeaderLinkProps = {
     label : string,
@@ -15,13 +17,15 @@ type HeaderProps = {
     socialLinks : Array<SocialLinkProps>,
 }
 
+
+
 const HeaderLink : FunctionComponent<HeaderLinkProps> = ( { label, url } ) => (
     <Link to={`/${url}`} className='header-link'>{label}</Link>
 )
 
-
-
-
+const BasketLink : FunctionComponent = () => (
+    <Link to='/basket' className='header-link'> <FontAwesomeIcon icon={faShoppingBasket} /></Link>
+)
 
 const Header : FunctionComponent<HeaderProps> = ( { headerLinks, socialLinks } ) => (
     <div className='header'>
@@ -29,6 +33,7 @@ const Header : FunctionComponent<HeaderProps> = ( { headerLinks, socialLinks } )
             {headerLinks.map( ( link ) => <HeaderLink {...link} /> )}
         </div>
         <Socials links={socialLinks} />
+        <BasketLink />
     </div>
 )
 

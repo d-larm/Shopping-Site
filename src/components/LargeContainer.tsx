@@ -1,6 +1,5 @@
 import React, { ReactNode, FunctionComponent } from 'react'
 import './Container.css'
-import { type } from 'os'
 
 type Props = {
     children?: ReactNode

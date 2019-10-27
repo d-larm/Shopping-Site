@@ -3,6 +3,9 @@
     width: 100vw;
     height: 30vmin;
     background-color: lightgrey;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
 
 }
 
