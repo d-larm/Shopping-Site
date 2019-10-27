@@ -1,0 +1,11 @@
+.container {
+    display: flex;
+    width: 100vw;
+    height: 30vmin;
+    background-color: lightgrey;
+
+}
+
+.container.large {
+    height:50vmin;
+}
