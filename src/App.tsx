@@ -11,6 +11,8 @@ import {SocialLinkProps} from './components/Socials'
 
 import Home from './pages/Home'
 import Basket from './pages/Basket'
+import Shop from './pages/Shop'
+import ItemPage from './pages/ItemPage'
 
 import './App.css'
 
@@ -20,15 +22,21 @@ const App : FC = () => {
     component : ComponentType<any>
   }
 
-  const routes : Array<AnimatedRouteProps> = [
+  const mainRoutes : Array<AnimatedRouteProps> = [
     {path: '/', component: Home},
     {path: '/basket', component: Basket},
+    {path: '/shop', component: Shop},
   ]
+
+  const subRoutes : Array<AnimatedRouteProps> = [
+    {path: '/shop/:shopId', component: ItemPage},
+  ]
+
   const headerLinks : Array<HeaderLinkProps> = [
     { label: 'Home', url: '' },
     { label: 'Videos', url: 'videos' },
-    { label: 'About Us', url: 'about' },
-    { label: 'Contact', url: 'contact' },
+    { label: 'Shop', url: 'shop' },
+    { label: 'About', url: 'contact' },
   ]
   
 
@@ -38,17 +46,28 @@ const App : FC = () => {
     { label: 'Youtube', url: 'https://youtube.com', icon: <FontAwesomeIcon icon={faYoutube}  />  },
   ]
 
-
   return (
     <div className="App">
       <Router>
       <header className="App-header">
         <Header headerLinks={headerLinks} socialLinks={socialLinks} />
-          {routes.map( ( { path, component: Component } : AnimatedRouteProps ) => (
+          {mainRoutes.map( ( { path, component: Component } : AnimatedRouteProps ) => (
               <Route key={path as string} path={path} exact>
                 { ({match}) => (
                   <CSSTransition in={!!match} key={path as string} timeout={1000} classNames='page' unmountOnExit>
                     <div className="page">
+                      <Component />
+                    </div>
+                  </CSSTransition>
+                )}
+              </Route> 
+          ) )}
+
+          {subRoutes.map( ( { path, component: Component } : AnimatedRouteProps ) => (
+              <Route key={path as string} path={path} exact>
+                { ({match}) => (
+                  <CSSTransition in={!!match} key={path as string} timeout={1000} classNames='subpage' unmountOnExit>
+                    <div className="subpage">
                       <Component />
                     </div>
                   </CSSTransition>

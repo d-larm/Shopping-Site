@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from 'react'
-import LargeContainer from '../components/LargeContainer'
+import LargeContainer from '../components/Container'
 
 const Basket : FunctionComponent = () => (
     <LargeContainer >

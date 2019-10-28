@@ -22,5 +22,5 @@ module.exports = {
         "array-bracket-spacing": ["error", "always"],
         "space-in-parens": ["error", "always"],
         "comma-spacing": [ "error" ]
-      }
+    }
 };
