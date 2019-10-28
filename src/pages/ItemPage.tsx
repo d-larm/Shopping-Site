@@ -18,7 +18,7 @@ const ItemPage : FunctionComponent<any> = ( { match } ) => {
 
 
     useEffect(() => {
-        const getItemData = async () => {
+        const getItemData = async () => { // Call API to obtain item information from database
             const itemData = {
                 id: match.params.id,
                 image: Shirt,
@@ -33,7 +33,7 @@ const ItemPage : FunctionComponent<any> = ( { match } ) => {
         getItemData()
     }, [] )
 
-    const { name, image, id, price, description } = itemInfo as Item
+    const { name, image, id, price, description, sizes } = itemInfo as Item
 
     return (
         <>
@@ -42,6 +42,10 @@ const ItemPage : FunctionComponent<any> = ( { match } ) => {
                 <img className='item-page-image' src={image} alt='shop item' />
                 <div className='item-page-name'>{name}</div> 
                 <div className='item-page-price'>{`$${price}`}</div>
+                <select className='item-page-sizes'>
+                    <option value=''>Please select</option>
+                    {sizes && sizes.map( ( size ) => <option value={size as string}>{size}</option>)}
+                </select>
                 <div className='add-basket-button'>Add to Basket</div>
                 <div className='item-page-description'>{description}</div>
             </div>

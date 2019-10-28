@@ -55,6 +55,23 @@
     margin-top: 5vmin;
 }
 
+.item-page-sizes {
+    margin-top: 5vmin;
+    min-width: 15vmin;
+    text-align: center;
+    border: 1px solid black;
+}
+
+option {
+    text-align: center;
+}
+
 .add-basket-button {
+    align-self: center;
+    font-size: 3vmin;
+    float: right;
+    width: 20vmin;
+    border: 2px solid black;
     margin-top: 10vmin;
+    padding: 10px;
 }

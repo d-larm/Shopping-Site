@@ -1,8 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Liu+Jian+Mao+Cao&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC&display=swap');
 
 
 .App {
-  font-family: 'Liu Jian Mao Cao', cursive;
+  /* font-family: 'Liu Jian Mao Cao', cursive; */
+  font-family: 'Amatic SC', cursive;
   text-align: center;
   overflow-x: hidden;
 }

@@ -13,16 +13,38 @@
     border-bottom: 2px solid white;
 }
 
-.header-link {
+.header-link-active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: white;
     padding-left: 30px;
     padding-right: 30px;
+    height: 100%;
+    text-decoration: none;
+    background-color: grey;
+}
+
+.header-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding-left: 30px;
+    padding-right: 30px;
+    height: 100%;
     text-decoration: none;
     
 }
 
 .header-link-container {
-    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    height: 100%;
+    text-align: center;
+    /* margin: 0 auto; */
+    padding: 0px 20px 0px 20px;
 }
 
 .socials {

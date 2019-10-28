@@ -17,21 +17,15 @@ interface HeaderProps extends RouteComponentProps {
     socialLinks : Array<SocialLinkProps>,
 }
 
-
-// const HeaderLink : FunctionComponent<HeaderLinkProps> = ( { label, url } ) => (
-//     <Link to={`/${url}`} className='header-link'>{label}</Link>
-// )
-
 const BasketLink : FunctionComponent = () => (
-    <Link to='/basket' className='header-link'> <FontAwesomeIcon icon={faShoppingBasket} /></Link>
+    <NavLink to='/basket' exact className='header-link' activeClassName='header-link-active'> <FontAwesomeIcon icon={faShoppingBasket} /></NavLink>
 )
 
 const Header : FunctionComponent<HeaderProps> = ( { match, headerLinks, socialLinks } ) => (
     <div className='header'>
         {console.log(match)}
         <div className='header-link-container'>
-            {headerLinks.map( ( { label, url } ) => match.url !== url ? <NavLink key={label} to={`/${url}`} className='header-link' activeClassName='header-link-active'>{label}</NavLink> 
-            :  <div className='header-link'>{label}</div> ) }
+            {headerLinks.map( ( { label, url } ) => <NavLink key={label} to={`/${url}`} exact className='header-link' activeClassName='header-link-active'>{label}</NavLink> ) }
         </div>
         <Socials links={socialLinks} />
         <BasketLink />
